@@ -15,10 +15,10 @@ class DefinitionsStub(object):
             channel: A grpc.Channel.
         """
         self.PingService = channel.unary_unary(
-                '/Definitions/PingService',
-                request_serializer=definition__pb2.Empty.SerializeToString,
-                response_deserializer=definition__pb2.PingResponse.FromString,
-                )
+            "/Definitions/PingService",
+            request_serializer=definition__pb2.Empty.SerializeToString,
+            response_deserializer=definition__pb2.PingResponse.FromString,
+        )
 
 
 class DefinitionsServicer(object):
@@ -27,40 +27,53 @@ class DefinitionsServicer(object):
     def PingService(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
+        context.set_details("Method not implemented!")
+        raise NotImplementedError("Method not implemented!")
 
 
 def add_DefinitionsServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'PingService': grpc.unary_unary_rpc_method_handler(
-                    servicer.PingService,
-                    request_deserializer=definition__pb2.Empty.FromString,
-                    response_serializer=definition__pb2.PingResponse.SerializeToString,
-            ),
+        "PingService": grpc.unary_unary_rpc_method_handler(
+            servicer.PingService,
+            request_deserializer=definition__pb2.Empty.FromString,
+            response_serializer=definition__pb2.PingResponse.SerializeToString,
+        ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'Definitions', rpc_method_handlers)
+        "Definitions", rpc_method_handlers
+    )
     server.add_generic_rpc_handlers((generic_handler,))
 
 
- # This class is part of an EXPERIMENTAL API.
+# This class is part of an EXPERIMENTAL API.
 class Definitions(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def PingService(request,
+    def PingService(
+        request,
+        target,
+        options=(),
+        channel_credentials=None,
+        call_credentials=None,
+        insecure=False,
+        compression=None,
+        wait_for_ready=None,
+        timeout=None,
+        metadata=None,
+    ):
+        return grpc.experimental.unary_unary(
+            request,
             target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/Definitions/PingService',
+            "/Definitions/PingService",
             definition__pb2.Empty.SerializeToString,
             definition__pb2.PingResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+        )

@@ -7,41 +7,49 @@ from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
+
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
 
 
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(
+    b'\n\x10\x64\x65\x66inition.proto"\x07\n\x05\x45mpty"\x1b\n\x0cPingResponse\x12\x0b\n\x03\x61\x63k\x18\x01 \x01(\t23\n\x0b\x44\x65\x66initions\x12$\n\x0bPingService\x12\x06.Empty\x1a\r.PingResponseb\x06proto3'
+)
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x10\x64\x65\x66inition.proto\"\x07\n\x05\x45mpty\"\x1b\n\x0cPingResponse\x12\x0b\n\x03\x61\x63k\x18\x01 \x01(\t23\n\x0b\x44\x65\x66initions\x12$\n\x0bPingService\x12\x06.Empty\x1a\r.PingResponseb\x06proto3')
-
-
-
-_EMPTY = DESCRIPTOR.message_types_by_name['Empty']
-_PINGRESPONSE = DESCRIPTOR.message_types_by_name['PingResponse']
-Empty = _reflection.GeneratedProtocolMessageType('Empty', (_message.Message,), {
-  'DESCRIPTOR' : _EMPTY,
-  '__module__' : 'definition_pb2'
-  # @@protoc_insertion_point(class_scope:Empty)
-  })
+_EMPTY = DESCRIPTOR.message_types_by_name["Empty"]
+_PINGRESPONSE = DESCRIPTOR.message_types_by_name["PingResponse"]
+Empty = _reflection.GeneratedProtocolMessageType(
+    "Empty",
+    (_message.Message,),
+    {
+        "DESCRIPTOR": _EMPTY,
+        "__module__": "definition_pb2"
+        # @@protoc_insertion_point(class_scope:Empty)
+    },
+)
 _sym_db.RegisterMessage(Empty)
 
-PingResponse = _reflection.GeneratedProtocolMessageType('PingResponse', (_message.Message,), {
-  'DESCRIPTOR' : _PINGRESPONSE,
-  '__module__' : 'definition_pb2'
-  # @@protoc_insertion_point(class_scope:PingResponse)
-  })
+PingResponse = _reflection.GeneratedProtocolMessageType(
+    "PingResponse",
+    (_message.Message,),
+    {
+        "DESCRIPTOR": _PINGRESPONSE,
+        "__module__": "definition_pb2"
+        # @@protoc_insertion_point(class_scope:PingResponse)
+    },
+)
 _sym_db.RegisterMessage(PingResponse)
 
-_DEFINITIONS = DESCRIPTOR.services_by_name['Definitions']
+_DEFINITIONS = DESCRIPTOR.services_by_name["Definitions"]
 if _descriptor._USE_C_DESCRIPTORS == False:
 
-  DESCRIPTOR._options = None
-  _EMPTY._serialized_start=20
-  _EMPTY._serialized_end=27
-  _PINGRESPONSE._serialized_start=29
-  _PINGRESPONSE._serialized_end=56
-  _DEFINITIONS._serialized_start=58
-  _DEFINITIONS._serialized_end=109
+    DESCRIPTOR._options = None
+    _EMPTY._serialized_start = 20
+    _EMPTY._serialized_end = 27
+    _PINGRESPONSE._serialized_start = 29
+    _PINGRESPONSE._serialized_end = 56
+    _DEFINITIONS._serialized_start = 58
+    _DEFINITIONS._serialized_end = 109
 # @@protoc_insertion_point(module_scope)
