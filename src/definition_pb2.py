@@ -14,12 +14,13 @@ _sym_db = _symbol_database.Default()
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(
-    b'\n\x10\x64\x65\x66inition.proto"\x07\n\x05\x45mpty"\x1b\n\x0cPingResponse\x12\x0b\n\x03\x61\x63k\x18\x01 \x01(\t23\n\x0b\x44\x65\x66initions\x12$\n\x0bPingService\x12\x06.Empty\x1a\r.PingResponseb\x06proto3'
+    b'\n\x10\x64\x65\x66inition.proto"\x07\n\x05\x45mpty";\n\x11\x43reateUserRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x17\n\x0fhashed_password\x18\x02 \x01(\t"%\n\x08UserData\x12\n\n\x02id\x18\x01 \x01(\x03\x12\r\n\x05\x65mail\x18\x02 \x01(\t2;\n\x0b\x44\x65\x66initions\x12,\n\x0b\x63reate_user\x12\x12.CreateUserRequest\x1a\t.UserDatab\x06proto3'
 )
 
 
 _EMPTY = DESCRIPTOR.message_types_by_name["Empty"]
-_PINGRESPONSE = DESCRIPTOR.message_types_by_name["PingResponse"]
+_CREATEUSERREQUEST = DESCRIPTOR.message_types_by_name["CreateUserRequest"]
+_USERDATA = DESCRIPTOR.message_types_by_name["UserData"]
 Empty = _reflection.GeneratedProtocolMessageType(
     "Empty",
     (_message.Message,),
@@ -31,16 +32,27 @@ Empty = _reflection.GeneratedProtocolMessageType(
 )
 _sym_db.RegisterMessage(Empty)
 
-PingResponse = _reflection.GeneratedProtocolMessageType(
-    "PingResponse",
+CreateUserRequest = _reflection.GeneratedProtocolMessageType(
+    "CreateUserRequest",
     (_message.Message,),
     {
-        "DESCRIPTOR": _PINGRESPONSE,
+        "DESCRIPTOR": _CREATEUSERREQUEST,
         "__module__": "definition_pb2"
-        # @@protoc_insertion_point(class_scope:PingResponse)
+        # @@protoc_insertion_point(class_scope:CreateUserRequest)
     },
 )
-_sym_db.RegisterMessage(PingResponse)
+_sym_db.RegisterMessage(CreateUserRequest)
+
+UserData = _reflection.GeneratedProtocolMessageType(
+    "UserData",
+    (_message.Message,),
+    {
+        "DESCRIPTOR": _USERDATA,
+        "__module__": "definition_pb2"
+        # @@protoc_insertion_point(class_scope:UserData)
+    },
+)
+_sym_db.RegisterMessage(UserData)
 
 _DEFINITIONS = DESCRIPTOR.services_by_name["Definitions"]
 if _descriptor._USE_C_DESCRIPTORS == False:
@@ -48,8 +60,10 @@ if _descriptor._USE_C_DESCRIPTORS == False:
     DESCRIPTOR._options = None
     _EMPTY._serialized_start = 20
     _EMPTY._serialized_end = 27
-    _PINGRESPONSE._serialized_start = 29
-    _PINGRESPONSE._serialized_end = 56
-    _DEFINITIONS._serialized_start = 58
-    _DEFINITIONS._serialized_end = 109
+    _CREATEUSERREQUEST._serialized_start = 29
+    _CREATEUSERREQUEST._serialized_end = 88
+    _USERDATA._serialized_start = 90
+    _USERDATA._serialized_end = 127
+    _DEFINITIONS._serialized_start = 129
+    _DEFINITIONS._serialized_end = 188
 # @@protoc_insertion_point(module_scope)

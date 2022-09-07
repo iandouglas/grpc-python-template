@@ -15,6 +15,7 @@ class Settings(BaseSettings):
     db_name: str = os.getenv("DB_NAME")
     db_user: str = os.getenv("DB_USER")
     db_password: str = os.getenv("DB_PASSWORD")
+    max_workers: int = os.getenv("MAX_WORKERS")
 
     class Config:
         env_file = ".env"

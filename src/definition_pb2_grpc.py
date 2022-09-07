@@ -14,17 +14,17 @@ class DefinitionsStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.PingService = channel.unary_unary(
-            "/Definitions/PingService",
-            request_serializer=definition__pb2.Empty.SerializeToString,
-            response_deserializer=definition__pb2.PingResponse.FromString,
+        self.create_user = channel.unary_unary(
+            "/Definitions/create_user",
+            request_serializer=definition__pb2.CreateUserRequest.SerializeToString,
+            response_deserializer=definition__pb2.UserData.FromString,
         )
 
 
 class DefinitionsServicer(object):
     """Missing associated documentation comment in .proto file."""
 
-    def PingService(self, request, context):
+    def create_user(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details("Method not implemented!")
@@ -33,10 +33,10 @@ class DefinitionsServicer(object):
 
 def add_DefinitionsServicer_to_server(servicer, server):
     rpc_method_handlers = {
-        "PingService": grpc.unary_unary_rpc_method_handler(
-            servicer.PingService,
-            request_deserializer=definition__pb2.Empty.FromString,
-            response_serializer=definition__pb2.PingResponse.SerializeToString,
+        "create_user": grpc.unary_unary_rpc_method_handler(
+            servicer.create_user,
+            request_deserializer=definition__pb2.CreateUserRequest.FromString,
+            response_serializer=definition__pb2.UserData.SerializeToString,
         ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -50,7 +50,7 @@ class Definitions(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def PingService(
+    def create_user(
         request,
         target,
         options=(),
@@ -65,9 +65,9 @@ class Definitions(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            "/Definitions/PingService",
-            definition__pb2.Empty.SerializeToString,
-            definition__pb2.PingResponse.FromString,
+            "/Definitions/create_user",
+            definition__pb2.CreateUserRequest.SerializeToString,
+            definition__pb2.UserData.FromString,
             options,
             channel_credentials,
             insecure,
