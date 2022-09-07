@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+
+service Definitions {
+    rpc create_user(CreateUserRequest) returns (UserData);
+}
+
+
+message Empty{};
+
+message CreateUserRequest{
+    string email = 1;
+    string hashed_password = 2;
+}
+
+message UserData{
+    int64 id = 1;
+    string email = 2;
+}
